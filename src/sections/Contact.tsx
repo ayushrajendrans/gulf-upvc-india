@@ -1,0 +1,101 @@
+import { FormEvent, useState } from "react";
+import { SectionHeading } from "../components/SectionHeading";
+import { architecturalImages, contact, contactHighlights, whatsappUrl } from "../data/site";
+
+export function Contact() {
+  const [status, setStatus] = useState("");
+
+  function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const name = String(form.get("name") || "").trim();
+    const phone = String(form.get("phone") || "").trim();
+    const projectType = String(form.get("projectType") || "").trim();
+    if (!name || !phone || !projectType) {
+      setStatus("Please add your name, phone number and project type.");
+      return;
+    }
+    setStatus("Thank you. The form is ready for backend/email integration; please call or WhatsApp for immediate enquiry.");
+  }
+
+  return (
+    <section id="contact" className="bg-ink">
+      <div className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+        <img src={architecturalImages.cta} alt="Premium modern architecture with glass doors" className="absolute inset-0 h-full w-full object-cover opacity-35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/30" />
+        <div className="relative mx-auto max-w-7xl">
+          <h2 className="max-w-4xl font-display text-5xl font-semibold leading-none text-bone sm:text-7xl">
+            Let’s Build Something Exceptional
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-bone/80">
+            Looking for premium doors, windows, glass or architectural solutions? Talk to our team about your project.
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href={`tel:${contact.phone}`} className="rounded-sm bg-gold px-7 py-4 text-center text-sm font-extrabold uppercase tracking-[0.18em] text-black">Call Now</a>
+            <a href={whatsappUrl} className="rounded-sm border border-bone/25 px-7 py-4 text-center text-sm font-extrabold uppercase tracking-[0.18em] text-bone hover:border-gold hover:text-gold">WhatsApp</a>
+            <a href="#quote" className="rounded-sm bg-bone px-7 py-4 text-center text-sm font-extrabold uppercase tracking-[0.18em] text-black">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+      <div id="quote" className="px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <SectionHeading eyebrow="Contact us" title="Request a quote" copy="Share a few details and the Gulf uPVC team can guide you on the right doors, windows, glass or cladding solution." />
+            <div className="mt-10 grid gap-4">
+              {contactHighlights.map(({ label, value, icon: Icon, href }) => (
+                <a key={label} href={href} className="flex items-center gap-4 border border-gold/20 bg-charcoal p-5 transition hover:border-gold/60">
+                  <Icon className="text-gold" />
+                  <span>
+                    <span className="block text-xs font-bold uppercase tracking-[0.22em] text-gold">{label}</span>
+                    <span className="text-bone">{value}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+          <form onSubmit={onSubmit} className="border border-gold/25 bg-charcoal p-6 sm:p-8">
+            <div className="grid gap-5 sm:grid-cols-2">
+              <label className="text-sm font-bold text-bone">Name<input name="name" required className="mt-2 w-full border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold" /></label>
+              <label className="text-sm font-bold text-bone">Phone<input name="phone" required type="tel" className="mt-2 w-full border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold" /></label>
+              <label className="text-sm font-bold text-bone">Email<input name="email" type="email" className="mt-2 w-full border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold" /></label>
+              <label className="text-sm font-bold text-bone">Project Type
+                <select name="projectType" required className="mt-2 w-full border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold">
+                  <option value="">Select a solution</option>
+                  <option>uPVC Windows & Doors</option>
+                  <option>Glass Facade</option>
+                  <option>Aluminium Sliding Systems</option>
+                  <option>Glass Works</option>
+                  <option>Partitions</option>
+                  <option>ACP Cladding</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label className="text-sm font-bold text-bone sm:col-span-2">Location<input name="location" className="mt-2 w-full border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold" /></label>
+              <label className="text-sm font-bold text-bone sm:col-span-2">Message<textarea name="message" rows={5} className="mt-2 w-full resize-none border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold" /></label>
+            </div>
+            <button className="mt-6 w-full rounded-sm bg-gold px-6 py-4 text-sm font-extrabold uppercase tracking-[0.18em] text-black transition hover:bg-gold-light">Request a Quote</button>
+            {status && <p className="mt-4 text-sm text-gold">{status}</p>}
+          </form>
+        </div>
+      </div>
+      <div id="location" className="border-y border-gold/20 bg-black px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-gold">Location</p>
+            <h3 className="mt-3 font-display text-4xl text-bone">{contact.company}</h3>
+            <p className="mt-4 leading-8 text-mist">{contact.addressLines.join(", ")}</p>
+            <p className="mt-3 text-mist">GSTIN: {contact.gstin}</p>
+            <p className="mt-3 text-mist">Email: {contact.email}</p>
+          </div>
+          <div className="grid min-h-[260px] place-items-center border border-gold/25 bg-charcoal p-8 text-center">
+            <div>
+              <p className="font-display text-4xl text-bone">Map Ready</p>
+              <p className="mt-4 max-w-md leading-7 text-mist">Google Maps embed is intentionally held as a configuration slot until the exact map pin is confirmed.</p>
+              <p className="mt-4 text-sm text-gold">{contact.mapQuery}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

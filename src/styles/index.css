@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #080808;
+  --surface: #121212;
+  --surface-light: #1d1b18;
+  --gold: #d9a441;
+  --gold-light: #e7be63;
+  --gold-dark: #a97822;
+  --text: #f5f0e8;
+  --text-muted: #bdb7ad;
+  --border: rgba(217, 164, 65, 0.45);
+  color-scheme: dark;
+  font-family: "Manrope", system-ui, sans-serif;
+  background: var(--background);
+  color: var(--text);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(217, 164, 65, 0.08), transparent 32rem),
+    var(--background);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(217, 164, 65, 0.35);
+  color: var(--text);
+}
+
+.h-13 {
+  height: 3.25rem;
+}
+
+.w-13 {
+  width: 3.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
