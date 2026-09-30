@@ -1,15 +1,13 @@
 export function Logo({ compact = false }: { compact?: boolean }) {
   return (
-    <a href="#home" className="group flex items-center gap-3" aria-label="Gulf uPVC home">
-      <div className="flex h-12 w-12 items-center justify-center rounded-sm border border-gold/50 bg-bone shadow-gold">
-        <span className="font-display text-3xl font-semibold leading-none text-[#b92525]">G</span>
-      </div>
-      {!compact && (
-        <div className="leading-tight">
-          <p className="text-base font-extrabold tracking-[0.08em] text-bone">Gulf uPVC</p>
-          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-mist">and Allied Industries</p>
-        </div>
-      )}
+    <a href="#home" className="group inline-flex shrink-0" aria-label="Gulf uPVC home">
+      <img
+        src={`${import.meta.env.BASE_URL}gulf-upvc-logo-transparent.png`}
+        alt="Gulf uPVC and Allied Industries"
+        className={`object-contain drop-shadow-[0_2px_5px_rgba(0,0,0,0.65)] transition duration-300 group-hover:brightness-110 ${
+          compact ? "h-11 w-36" : "h-[52px] w-[184px] sm:h-14 sm:w-[200px]"
+        }`}
+      />
     </a>
   );
 }
