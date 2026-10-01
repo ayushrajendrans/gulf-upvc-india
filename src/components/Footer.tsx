@@ -8,7 +8,7 @@ export function Footer() {
         <div className="md:col-span-2">
           <Logo />
           <p className="mt-6 max-w-md leading-8 text-mist">
-            Premium Black &amp; Gold Architectural Brand. Doors, windows, glass and architectural solutions for modern residential and commercial spaces.
+            Premium doors, windows, glass and architectural solutions for modern residential and commercial spaces.
           </p>
         </div>
         <div>

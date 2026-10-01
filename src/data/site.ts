@@ -21,6 +21,8 @@ import {
   Wind,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import upvcCasementWindow from "../assets/upvc-casement-window.png";
+import upvcSlidingSystem from "../assets/upvc-sliding-system.png";
 
 export const contact = {
   company: "Gulf uPVC & Allied Industries",
@@ -63,8 +65,7 @@ export type Product = {
 export const architecturalImages = {
   hero:
     "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=2200&q=85",
-  about:
-    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1500&q=85",
+  about: upvcCasementWindow,
   sliding:
     "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=85",
   facade:
@@ -88,7 +89,7 @@ export const products: Product[] = [
     eyebrow: "Keep the noise out and the coolness in.",
     description:
       "High-insulation uPVC systems for peaceful, energy-efficient living.",
-    image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85",
+    image: upvcSlidingSystem,
     icon: Home,
     benefits: ["Durable construction", "Sound insulation", "Dust and rain protection", "Low maintenance"],
     applications: ["Sliding windows", "Casement windows", "Combination windows", "Residential and commercial openings"],

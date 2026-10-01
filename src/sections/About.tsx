@@ -8,7 +8,7 @@ export function About() {
     <section id="about" className="surface-grid px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="relative">
-          <img src={architecturalImages.about} alt="Premium residential architecture with expansive glazing" className="aspect-[4/5] w-full object-cover" />
+          <img src={architecturalImages.about} alt="White uPVC casement window with visible frame, glazing and hardware" className="aspect-[4/5] w-full object-cover" />
           <div className="absolute -bottom-6 -right-3 border border-gold/40 bg-black/82 p-6 shadow-premium backdrop-blur sm:-right-6">
             <p className="font-display text-5xl text-gold">10+</p>
             <p className="text-sm uppercase tracking-[0.22em] text-bone/80">Years Experience</p>
