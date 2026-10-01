@@ -5,7 +5,7 @@ const benefits = ["Energy Efficient", "Low Maintenance", "Noise Reduction", "Lon
 
 export function About() {
   return (
-    <section id="about" className="bg-ink px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+    <section id="about" className="surface-grid px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="relative">
           <img src={architecturalImages.about} alt="Premium residential architecture with expansive glazing" className="aspect-[4/5] w-full object-cover" />
@@ -18,14 +18,14 @@ export function About() {
           <SectionHeading
             eyebrow="About Gulf uPVC"
             title="Architectural systems for refined modern spaces."
-            copy="Gulf uPVC & Allied Industries specializes in premium uPVC windows, doors, glass works, partitions, aluminium sliding systems and exterior cladding solutions for residential and commercial projects."
+            copy="Gulf uPVC & Allied Industries specializes in premium-quality uPVC windows and doors, glass works, partitions, and luxury architectural solutions."
           />
           <p className="mt-6 text-base leading-8 text-mist">
-            Our solutions bring together durability, energy efficiency, weather resistance, thermal comfort, noise reduction and modern aesthetics. Every opening, partition and elevation is approached as part of the architecture, with clean detailing and practical long-term performance in mind.
+            From ultra-slim aluminium sliding systems and glass facades to designer laminated doors and ACP cladding, our solutions bring together durability, energy efficiency, weather resistance, thermal comfort, noise reduction and modern aesthetics.
           </p>
           <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {benefits.map((item) => (
-              <div key={item} className="border border-gold/25 bg-charcoal p-4 text-center text-sm font-bold text-bone">
+              <div key={item} className="premium-panel border border-gold/25 p-4 text-center text-sm font-bold text-bone">
                 {item}
               </div>
             ))}

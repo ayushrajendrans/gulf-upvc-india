@@ -36,11 +36,11 @@ function CountUp({ value, suffix }: { value: number; suffix: string }) {
 
 export function StatsTestimonials() {
   return (
-    <section id="testimonials" className="bg-[#0d0d0c]">
-      <div className="border-y border-gold/20 bg-black px-4 py-16 sm:px-6 lg:px-8">
+    <section id="testimonials" className="surface-glass">
+      <div className="border-y border-gold/20 bg-[#0b0d0f]/80 px-4 py-16 backdrop-blur-sm sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-px overflow-hidden border border-gold/25 bg-gold/25 md:grid-cols-3">
           {stats.map((stat) => (
-            <div key={stat.label} className="bg-black p-8 text-center">
+            <div key={stat.label} className="premium-panel p-8 text-center">
               <p className="font-display text-6xl text-gold">
                 <CountUp value={stat.value} suffix={stat.suffix} />
               </p>
@@ -51,10 +51,10 @@ export function StatsTestimonials() {
       </div>
       <div className="px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-7xl">
-          <SectionHeading align="center" eyebrow="Testimonials" title="Finished with care." copy="Professionally rewritten testimonial themes from prior customer feedback without inventing named endorsements." />
+          <SectionHeading align="center" eyebrow="Testimonials" title="Finished with care." copy="What homeowners and commercial clients value about our products, installation coordination and finishing." />
           <div className="mt-14 grid gap-5 md:grid-cols-3">
             {testimonials.map((item) => (
-              <blockquote key={item.name} className="border border-gold/25 bg-charcoal p-7">
+              <blockquote key={item.name} className="premium-panel border border-gold/25 p-7">
                 <p className="font-display text-5xl text-gold">“</p>
                 <p className="text-base leading-8 text-bone/85">{item.quote}</p>
                 <footer className="mt-7 text-sm font-bold uppercase tracking-[0.2em] text-gold">{item.name}</footer>

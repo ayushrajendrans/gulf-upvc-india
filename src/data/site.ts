@@ -5,6 +5,7 @@ import {
   CheckCircle2,
   DoorOpen,
   Gem,
+  Globe2,
   Hammer,
   Home,
   Layers3,
@@ -26,7 +27,7 @@ export const contact = {
   phone: "+917558802222",
   displayPhone: "+91 75588 02222",
   whatsapp: "+917558802222",
-  email: "gulfupvc.india@gmail.com",
+  email: "info@gulfupvcindia.com",
   website: "www.gulfupvcindia.com",
   gstin: "33BAQPA4598A1ZU",
   addressLines: ["10/7/2, Tenkasi Main Road", "Elathur, Achampudur", "Tamil Nadu - 627803"],
@@ -84,9 +85,9 @@ export const values = [
 export const products: Product[] = [
   {
     title: "Premium uPVC Windows",
-    eyebrow: "Quiet. Efficient. Built for modern living.",
+    eyebrow: "Keep the noise out and the coolness in.",
     description:
-      "High-insulation uPVC window systems designed for peaceful, energy-efficient homes and commercial spaces.",
+      "High-insulation uPVC systems for peaceful, energy-efficient living.",
     image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1400&q=85",
     icon: Home,
     benefits: ["Durable construction", "Sound insulation", "Dust and rain protection", "Low maintenance"],
@@ -95,13 +96,23 @@ export const products: Product[] = [
   },
   {
     title: "Premium uPVC Doors",
-    eyebrow: "Strong. Secure. Stylish.",
+    eyebrow: "Designed for modern homes: maximum glass view, superior strength, and total peace of mind.",
     description:
-      "Sleek architectural design meets security-focused detailing, weather resistance and contemporary appearance.",
+      "Sleek architectural design meets multi-point locking security. Elevate your living space effortlessly.",
     image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1400&q=85",
     icon: DoorOpen,
     benefits: ["Security-focused design", "Weather resistant", "Elegant finishes", "Resists common wooden-frame issues"],
     applications: ["Balcony doors", "Patio doors", "Entrance areas", "Homes and offices"],
+  },
+  {
+    title: "Designer Laminated Doors",
+    eyebrow: "Refined entrances. Premium finishing.",
+    description:
+      "Luxury entrance doors crafted with premium laminated finishes for distinctive residential and commercial spaces.",
+    image: "https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?auto=format&fit=crop&w=1400&q=85",
+    icon: DoorOpen,
+    benefits: ["Premium laminated finishes", "Contemporary designs", "Durable construction", "Easy maintenance"],
+    applications: ["Main entrances", "Luxury residences", "Villas", "Office interiors"],
   },
   {
     title: "Ultra-Slim Aluminium Sliding Systems",
@@ -115,7 +126,7 @@ export const products: Product[] = [
     feature: true,
   },
   {
-    title: "Architectural Glass Facades",
+    title: "Premium Glass Facade Solutions",
     eyebrow: "Modern Look. Maximum Light.",
     description:
       "Contemporary glass facade solutions that create striking elevations, expansive daylight and a refined architectural identity.",
@@ -183,7 +194,8 @@ export const testimonials = [
 
 export const contactHighlights = [
   { label: "Call", value: contact.displayPhone, icon: Phone, href: `tel:${contact.phone}` },
-  { label: "WhatsApp", value: "Quick project enquiry", icon: MessageCircle, href: whatsappUrl },
+  { label: "WhatsApp", value: "Chat on WhatsApp", icon: MessageCircle, href: whatsappUrl },
   { label: "Email", value: contact.email, icon: Mail, href: `mailto:${contact.email}` },
+  { label: "Website", value: contact.website, icon: Globe2, href: "https://www.gulfupvcindia.com" },
   { label: "Visit", value: "Elathur, Achampudur", icon: MapPin, href: "#location" },
 ];

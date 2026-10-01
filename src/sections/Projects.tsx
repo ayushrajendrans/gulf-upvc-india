@@ -7,7 +7,7 @@ export function Projects() {
   const [active, setActive] = useState<(typeof projectImages)[number] | null>(null);
 
   return (
-    <section id="projects" className="bg-ink px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+    <section id="projects" className="surface-strata px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Selected projects"

@@ -19,7 +19,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-ink">
+    <section id="contact" className="bg-[#090b0c]">
       <div className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
         <img src={architecturalImages.cta} alt="Premium modern architecture with glass doors" className="absolute inset-0 h-full w-full object-cover opacity-35" />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/30" />
@@ -37,13 +37,13 @@ export function Contact() {
           </div>
         </div>
       </div>
-      <div id="quote" className="px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+      <div id="quote" className="surface-grid px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <SectionHeading eyebrow="Contact us" title="Request a quote" copy="Share a few details and the Gulf uPVC team can guide you on the right doors, windows, glass or cladding solution." />
             <div className="mt-10 grid gap-4">
               {contactHighlights.map(({ label, value, icon: Icon, href }) => (
-                <a key={label} href={href} className="flex items-center gap-4 border border-gold/20 bg-charcoal p-5 transition hover:border-gold/60">
+                <a key={label} href={href} className="premium-panel flex items-center gap-4 border border-gold/20 p-5 transition hover:border-gold/60">
                   <Icon className="text-gold" />
                   <span>
                     <span className="block text-xs font-bold uppercase tracking-[0.22em] text-gold">{label}</span>
@@ -53,7 +53,7 @@ export function Contact() {
               ))}
             </div>
           </div>
-          <form onSubmit={onSubmit} className="border border-gold/25 bg-charcoal p-6 sm:p-8">
+          <form onSubmit={onSubmit} className="premium-panel border border-gold/25 p-6 sm:p-8">
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="text-sm font-bold text-bone">Name<input name="name" required className="mt-2 w-full border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold" /></label>
               <label className="text-sm font-bold text-bone">Phone<input name="phone" required type="tel" className="mt-2 w-full border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold" /></label>
@@ -62,6 +62,7 @@ export function Contact() {
                 <select name="projectType" required className="mt-2 w-full border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold">
                   <option value="">Select a solution</option>
                   <option>uPVC Windows & Doors</option>
+                  <option>Designer Laminated Doors</option>
                   <option>Glass Facade</option>
                   <option>Aluminium Sliding Systems</option>
                   <option>Glass Works</option>
@@ -78,7 +79,7 @@ export function Contact() {
           </form>
         </div>
       </div>
-      <div id="location" className="border-y border-gold/20 bg-black px-4 py-16 sm:px-6 lg:px-8">
+      <div id="location" className="surface-strata border-y border-gold/20 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-gold">Location</p>
@@ -87,12 +88,15 @@ export function Contact() {
             <p className="mt-3 text-mist">GSTIN: {contact.gstin}</p>
             <p className="mt-3 text-mist">Email: {contact.email}</p>
           </div>
-          <div className="grid min-h-[260px] place-items-center border border-gold/25 bg-charcoal p-8 text-center">
-            <div>
-              <p className="font-display text-4xl text-bone">Map Ready</p>
-              <p className="mt-4 max-w-md leading-7 text-mist">Google Maps embed is intentionally held as a configuration slot until the exact map pin is confirmed.</p>
-              <p className="mt-4 text-sm text-gold">{contact.mapQuery}</p>
-            </div>
+          <div className="premium-panel min-h-[300px] overflow-hidden border border-gold/25">
+            <iframe
+              title="Gulf uPVC & Allied Industries location"
+              src={`https://www.google.com/maps?q=${encodeURIComponent(contact.mapQuery)}&output=embed`}
+              className="h-full min-h-[300px] w-full border-0 grayscale-[20%]"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </div>

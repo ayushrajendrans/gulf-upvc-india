@@ -8,7 +8,7 @@ export function Footer() {
         <div className="md:col-span-2">
           <Logo />
           <p className="mt-6 max-w-md leading-8 text-mist">
-            Premium doors, windows, glass and architectural solutions for modern residential and commercial spaces.
+            Premium Black &amp; Gold Architectural Brand. Doors, windows, glass and architectural solutions for modern residential and commercial spaces.
           </p>
         </div>
         <div>
@@ -22,7 +22,7 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-bold uppercase tracking-[0.22em] text-gold">Products</h3>
           <div className="mt-5 grid gap-3">
-            {products.slice(0, 6).map((product) => (
+            {products.map((product) => (
               <a key={product.title} href="#products" className="text-mist transition hover:text-gold">{product.title}</a>
             ))}
           </div>

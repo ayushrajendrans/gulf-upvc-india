@@ -7,18 +7,18 @@ export function Products() {
   const [selected, setSelected] = useState<Product | null>(null);
 
   return (
-    <section id="products" className="bg-[#0d0d0c] px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+    <section id="products" className="surface-strata border-y border-white/5 px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Featured solutions"
-          title="Our expertise"
+          title="Transform Your Home with Precision-Engineered uPVC Doors & Windows"
           copy="Architectural solutions designed for modern spaces, from precision uPVC systems to glass facades and ACP cladding."
         />
         <div className="mt-14 grid gap-5 lg:grid-cols-6">
           {products.map((product, index) => (
             <article
               key={product.title}
-              className={`group overflow-hidden border border-gold/20 bg-charcoal shadow-gold transition duration-300 hover:-translate-y-1 hover:border-gold/70 ${
+              className={`premium-panel group overflow-hidden border border-gold/20 shadow-gold transition duration-300 hover:-translate-y-1 hover:border-gold/70 ${
                 product.feature ? "lg:col-span-3" : "lg:col-span-2"
               } ${index === 2 ? "lg:row-span-2" : ""}`}
             >

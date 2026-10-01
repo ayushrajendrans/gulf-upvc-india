@@ -33,6 +33,86 @@ body {
     var(--background);
 }
 
+.surface-grid,
+.surface-strata,
+.surface-glass {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.surface-grid {
+  background-color: #0b0d0f;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(217, 164, 65, 0.055), transparent 38%);
+  background-size: 56px 56px, 56px 56px, 100% 100%;
+}
+
+.surface-grid::before,
+.surface-strata::before,
+.surface-glass::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+}
+
+.surface-grid::before {
+  background: linear-gradient(110deg, transparent 12%, rgba(217, 164, 65, 0.09) 12.15%, transparent 12.3% 76%, rgba(255, 255, 255, 0.04) 76.15%, transparent 76.3%);
+  background-size: 180% 100%;
+  animation: architectural-drift 24s ease-in-out infinite alternate;
+}
+
+.surface-strata {
+  background-color: #0e0f10;
+  background-image:
+    repeating-linear-gradient(118deg, transparent 0 88px, rgba(255, 255, 255, 0.018) 89px 90px),
+    linear-gradient(165deg, rgba(217, 164, 65, 0.07), transparent 24%, transparent 72%, rgba(93, 116, 129, 0.08));
+}
+
+.surface-strata::before {
+  background:
+    linear-gradient(118deg, transparent 0 44%, rgba(217, 164, 65, 0.055) 44.2%, transparent 44.4%),
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 1.2px);
+  background-size: 160% 100%, 18px 18px;
+  opacity: 0.45;
+  animation: architectural-drift 30s ease-in-out infinite alternate-reverse;
+}
+
+.surface-glass {
+  background-color: #0a0d0f;
+  background-image: linear-gradient(135deg, rgba(76, 103, 117, 0.12), transparent 42%, rgba(217, 164, 65, 0.055));
+}
+
+.surface-glass::before {
+  background-image:
+    repeating-linear-gradient(90deg, transparent 0 118px, rgba(182, 203, 214, 0.07) 119px 120px),
+    linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.045) 46%, transparent 57%);
+  background-size: 240px 100%, 220% 100%;
+  animation: glass-shift 22s linear infinite;
+}
+
+.premium-panel {
+  background:
+    linear-gradient(145deg, rgba(34, 35, 35, 0.96), rgba(16, 17, 18, 0.96));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.045),
+    0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+@keyframes architectural-drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 28% 0, 0 0; }
+}
+
+@keyframes glass-shift {
+  from { background-position: 0 0, -40% 0; }
+  to { background-position: 240px 0, 130% 0; }
+}
+
 * {
   box-sizing: border-box;
 }
