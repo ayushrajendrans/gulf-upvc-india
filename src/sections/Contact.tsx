@@ -4,18 +4,54 @@ import { architecturalImages, contact, contactHighlights, whatsappUrl } from "..
 
 export function Contact() {
   const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function onSubmit(event: FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
     const name = String(form.get("name") || "").trim();
     const phone = String(form.get("phone") || "").trim();
+    const email = String(form.get("email") || "").trim();
     const projectType = String(form.get("projectType") || "").trim();
     if (!name || !phone || !projectType) {
       setStatus("Please add your name, phone number and project type.");
       return;
     }
-    setStatus("Thank you. The form is ready for backend/email integration; please call or WhatsApp for immediate enquiry.");
+
+    setIsSubmitting(true);
+    setStatus("");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/gulfupvc.india@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          email: email || "Not provided",
+          projectType,
+          location: String(form.get("location") || "").trim() || "Not provided",
+          message: String(form.get("message") || "").trim() || "Not provided",
+          _subject: "New Gulf uPVC website enquiry",
+          _template: "table",
+          _replyto: email || undefined,
+          _honey: String(form.get("_honey") || ""),
+        }),
+      });
+
+      if (!response.ok) throw new Error("Unable to submit enquiry");
+
+      formElement.reset();
+      setStatus("Thank you. Your enquiry has been sent to the Gulf uPVC team.");
+    } catch {
+      setStatus("We could not send your enquiry. Please call or WhatsApp us for immediate assistance.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -54,6 +90,7 @@ export function Contact() {
             </div>
           </div>
           <form onSubmit={onSubmit} className="premium-panel border border-gold/25 p-6 sm:p-8">
+            <input name="_honey" type="text" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="text-sm font-bold text-bone">Name<input name="name" required className="mt-2 w-full border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold" /></label>
               <label className="text-sm font-bold text-bone">Phone<input name="phone" required type="tel" className="mt-2 w-full border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold" /></label>
@@ -73,8 +110,10 @@ export function Contact() {
               <label className="text-sm font-bold text-bone sm:col-span-2">Location<input name="location" className="mt-2 w-full border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold" /></label>
               <label className="text-sm font-bold text-bone sm:col-span-2">Message<textarea name="message" rows={5} className="mt-2 w-full resize-none border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold" /></label>
             </div>
-            <button className="mt-6 w-full rounded-sm bg-gold px-6 py-4 text-sm font-extrabold uppercase tracking-[0.18em] text-black transition hover:bg-gold-light">Request a Quote</button>
-            {status && <p className="mt-4 text-sm text-gold">{status}</p>}
+            <button disabled={isSubmitting} className="mt-6 w-full rounded-sm bg-gold px-6 py-4 text-sm font-extrabold uppercase tracking-[0.18em] text-black transition hover:bg-gold-light disabled:cursor-not-allowed disabled:opacity-60">
+              {isSubmitting ? "Sending Enquiry..." : "Request a Quote"}
+            </button>
+            {status && <p className="mt-4 text-sm text-gold" role="status">{status}</p>}
           </form>
         </div>
       </div>

@@ -12,8 +12,9 @@ export function Hero() {
       <div className="relative mx-auto flex min-h-[calc(100vh-7rem)] w-full max-w-7xl items-center px-4 pb-24 sm:px-6 lg:px-8">
         <div className="max-w-4xl">
           <p className="mb-5 text-sm font-bold uppercase tracking-[0.34em] text-gold">Premium Doors, Windows &amp; Architectural Solutions</p>
-          <h1 className="max-w-5xl font-display text-4xl font-semibold leading-[0.96] text-bone sm:text-5xl lg:text-7xl xl:text-8xl">
-            One-stop premium architectural solutions for homes, offices and commercial spaces.
+          <h1 className="max-w-full break-words font-display text-5xl font-semibold leading-[0.9] text-bone sm:text-6xl lg:text-8xl xl:text-9xl">
+            <span className="block text-gold">Complete Solutions</span>
+            <span className="block">For Your Dream Spaces</span>
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-bone/82 sm:text-xl">
             Engineered for Perfection. Crafted for Modern Architecture.
