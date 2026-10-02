@@ -19,6 +19,7 @@ import {
   Wind,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import acpCladdingSolutions from "../assets/acp-cladding-solutions.png";
 import panoramicSlidingSystem from "../assets/panoramic-sliding-system.png";
 import upvcCasementWindow from "../assets/upvc-casement-window.png";
 import upvcSlidingSystem from "../assets/upvc-sliding-system.png";
@@ -59,6 +60,7 @@ export type Product = {
   benefits: string[];
   applications: string[];
   feature?: boolean;
+  imageAspect?: string;
 };
 
 export const architecturalImages = {
@@ -118,10 +120,11 @@ export const products: Product[] = [
     eyebrow: "Strength. Style. Durability.",
     description:
       "Modern ACP cladding solutions designed to give commercial and residential elevations a clean, contemporary architectural finish.",
-    image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1400&q=85",
+    image: acpCladdingSolutions,
     icon: PanelsTopLeft,
     benefits: ["Weather resistant", "Low maintenance", "Wide range of finishes", "Customisable exterior applications"],
     applications: ["Exterior elevations", "Commercial fronts", "Residential facades", "Architectural feature panels"],
+    imageAspect: "aspect-[1.5]",
   },
 ];
 

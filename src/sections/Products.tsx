@@ -22,7 +22,7 @@ export function Products() {
                 product.feature ? "lg:col-span-3" : "lg:col-span-2"
               } ${index === 2 ? "lg:row-span-2" : ""}`}
             >
-              <div className={product.feature ? "aspect-[1.35]" : "aspect-[1.25]"}>
+              <div className={product.imageAspect ?? (product.feature ? "aspect-[1.35]" : "aspect-[1.25]")}>
                 <img src={product.image} alt={product.title} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
               </div>
               <div className="p-6">
