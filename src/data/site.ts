@@ -3,7 +3,6 @@ import {
   BadgeCheck,
   Building2,
   CheckCircle2,
-  DoorOpen,
   Gem,
   Globe2,
   Hammer,
@@ -15,12 +14,12 @@ import {
   PanelsTopLeft,
   Phone,
   ShieldCheck,
-  Sparkles,
   SunMedium,
   Volume2,
   Wind,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import panoramicSlidingSystem from "../assets/panoramic-sliding-system.png";
 import upvcCasementWindow from "../assets/upvc-casement-window.png";
 import upvcSlidingSystem from "../assets/upvc-sliding-system.png";
 
@@ -66,8 +65,7 @@ export const architecturalImages = {
   hero:
     "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=2200&q=85",
   about: upvcCasementWindow,
-  sliding:
-    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=85",
+  sliding: panoramicSlidingSystem,
   facade:
     "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1800&q=85",
   office:
@@ -93,37 +91,6 @@ export const products: Product[] = [
     icon: Home,
     benefits: ["Durable construction", "Sound insulation", "Dust and rain protection", "Low maintenance"],
     applications: ["Sliding windows", "Casement windows", "Combination windows", "Residential and commercial openings"],
-    feature: true,
-  },
-  {
-    title: "Premium uPVC Doors",
-    eyebrow: "Designed for modern homes: maximum glass view, superior strength, and total peace of mind.",
-    description:
-      "Sleek architectural design meets multi-point locking security. Elevate your living space effortlessly.",
-    image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1400&q=85",
-    icon: DoorOpen,
-    benefits: ["Security-focused design", "Weather resistant", "Elegant finishes", "Resists common wooden-frame issues"],
-    applications: ["Balcony doors", "Patio doors", "Entrance areas", "Homes and offices"],
-  },
-  {
-    title: "Designer Laminated Doors",
-    eyebrow: "Refined entrances. Premium finishing.",
-    description:
-      "Luxury entrance doors crafted with premium laminated finishes for distinctive residential and commercial spaces.",
-    image: "https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?auto=format&fit=crop&w=1400&q=85",
-    icon: DoorOpen,
-    benefits: ["Premium laminated finishes", "Contemporary designs", "Durable construction", "Easy maintenance"],
-    applications: ["Main entrances", "Luxury residences", "Villas", "Office interiors"],
-  },
-  {
-    title: "Ultra-Slim Aluminium Sliding Systems",
-    eyebrow: "Maximum Glass. Minimal Frame. Infinite Views.",
-    description:
-      "Ultra-slim aluminium profiles maximize glass area, bringing in more natural light while creating clean, uninterrupted views.",
-    image: architecturalImages.sliding,
-    icon: Sparkles,
-    benefits: ["Minimal sightlines", "Large glass openings", "Smooth operation", "High-end architectural appearance"],
-    applications: ["Luxury residences", "Balconies", "Commercial lounges", "Wide panoramic openings"],
     feature: true,
   },
   {

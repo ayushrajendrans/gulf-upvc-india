@@ -62,7 +62,6 @@ export function Contact() {
                 <select name="projectType" required className="mt-2 w-full border border-bone/15 bg-black px-4 py-3 text-bone outline-none focus:border-gold">
                   <option value="">Select a solution</option>
                   <option>uPVC Windows & Doors</option>
-                  <option>Designer Laminated Doors</option>
                   <option>Glass Facade</option>
                   <option>Aluminium Sliding Systems</option>
                   <option>Glass Works</option>
