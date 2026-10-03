@@ -168,5 +168,5 @@ export const contactHighlights = [
   { label: "WhatsApp", value: "Chat on WhatsApp", icon: MessageCircle, href: whatsappUrl },
   { label: "Email", value: contact.email, icon: Mail, href: `mailto:${contact.email}` },
   { label: "Website", value: contact.website, icon: Globe2, href: "https://www.gulfupvcindia.com" },
-  { label: "Visit", value: "Elathur, Achampudur", icon: MapPin, href: "#location" },
+  { label: "Visit", value: "Elathur, Tenkasi, Tamil Nadu", icon: MapPin, href: "#location" },
 ];
