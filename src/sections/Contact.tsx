@@ -46,6 +46,9 @@ export function Contact() {
       if (!response.ok) throw new Error("Unable to submit enquiry");
 
       formElement.reset();
+      window.gtag?.("event", "conversion", {
+        send_to: "AW-18404665721/urK2CKbKqJQdEPnSg8hE",
+      });
       setStatus("Thank you. Your enquiry has been sent to the Gulf uPVC team.");
     } catch {
       setStatus("We could not send your enquiry. Please call or WhatsApp us for immediate assistance.");
