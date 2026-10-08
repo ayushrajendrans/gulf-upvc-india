@@ -29,7 +29,7 @@ export const contact = {
   phone: "+917558802222",
   displayPhone: "+91 75588 02222",
   whatsapp: "+917558802222",
-  email: "info@gulfupvcindia.com",
+  email: "gulfupvc.india@gmail.com",
   website: "gulfupvcindia.com",
   gstin: "33BAQPA4598A1ZU",
   addressLines: ["10/7/2, Tenkasi Main Road", "Elathur, Achampudur", "Tamil Nadu - 627803"],
