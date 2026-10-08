@@ -30,7 +30,7 @@ export const contact = {
   displayPhone: "+91 75588 02222",
   whatsapp: "+917558802222",
   email: "info@gulfupvcindia.com",
-  website: "www.gulfupvcindia.com",
+  website: "gulfupvcindia.com",
   gstin: "33BAQPA4598A1ZU",
   addressLines: ["10/7/2, Tenkasi Main Road", "Elathur, Achampudur", "Tamil Nadu - 627803"],
   mapQuery:
@@ -167,6 +167,6 @@ export const contactHighlights = [
   { label: "Call", value: contact.displayPhone, icon: Phone, href: `tel:${contact.phone}` },
   { label: "WhatsApp", value: "Chat on WhatsApp", icon: MessageCircle, href: whatsappUrl },
   { label: "Email", value: contact.email, icon: Mail, href: `mailto:${contact.email}` },
-  { label: "Website", value: contact.website, icon: Globe2, href: "https://www.gulfupvcindia.com" },
+  { label: "Website", value: contact.website, icon: Globe2, href: "https://gulfupvcindia.com" },
   { label: "Visit", value: "Elathur, Tenkasi, Tamil Nadu", icon: MapPin, href: "#location" },
 ];
